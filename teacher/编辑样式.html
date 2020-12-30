@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 400px;
+            height: 200px;
+            border: 1px solid brown;
+            background-color: brown;
+            transition: all .6s;
+        }
+        .ad{
+            width: 100%;
+        }
+    </style>
+    <script src="../File/jquery-3.5.1.js"></script>
+    <script>
+        $(() => {
+            $('#start').click(() => {
+                $('#box1').slideToggle();
+                $('#box2').toggleClass('ad');
+            })
+        })
+    </script>
+</head>
+<body>
+    <button id = 'start'>开始</button>
+    <div id = 'box1'></div><br>
+    <div id = 'box2'></div>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            /* display: flex; */
+            margin: 0px;
+            padding: 0px;
+        }
+        div{
+            border: 2px solid green;
+            width: 500px;
+        }
+        #box{
+            height:500px;
+            width: 500px;
+            position: absolute;
+        }
+        #title{
+            background-color: yellow;
+            height: 100px;
+            width: 500px;
+            float: left;
+            /* position: relative; */
+        }
+        #cten{
+            height: 400px;
+            width: 1500px;
+            float: left;
+            /* position: relative; */
+        }
+        .select{
+
+            display: block;
+        }
+
+    </style>
+    <script src="../File/jquery-3.5.1.js"></script>
+    <script>
+        $(() => {
+
+        })
+    </script>
+</head>
+<body>
+    <div id="box">
+        <div id = 'tit'>
+            <ul id = 'select'>
+                <li id = 'yw'>要闻</li>
+                <li id = 'jx'>简讯</li>
+                <li id = 'jjcx'>聚焦川信</li>
+            </ul>
+        </div>
+        <div id = 'cten'>
+            <div id = 'ywCten'>
+                <ul id = 'list'>
+                    <li>要闻</li>
+                    <li>要闻</li>
+                    <li>要闻</li>
+                </ul>
+                <ul>
+                    <li>简讯</li>
+                    <li>简讯</li>
+                    <li>简讯</li>
+                </ul>
+                
+                <ul>
+                    <li>聚焦川信</li>
+                    <li>聚焦川信</li>
+                    <li>聚焦川信</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

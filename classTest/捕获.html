@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>捕获内容
+
+    </title>
+    <script src="../File/jquery-3.5.1.js"></script>
+    <script>
+        $(() => {
+            $('#content1').click(function(){
+                alert($('div').text());
+                // alert($('div').val());
+                // console.log($('div').html());
+            })
+            $('#content2').click(function(){
+                // console.log($('div').text());
+                // alert($('body').html());
+                alert($('#inp').val());
+                alert($('#inp').attr('type'));
+                alert($('#inp').attr('abc'));
+                // alert($('#inp').prop('type'));
+                // alert($('#inp').prop('abc'));
+            })
+
+            //全选
+            $('#ckall').click(function(){
+            //    alert( $(this).attr('checked'));
+               alert( $(this).prop('checked'));
+               $('.ckall').prop('checked',$(this).prop('checked'))
+            //    $('.ckall').prop('checked',!$(this).prop('checked'))  //反选
+            })
+        })
+    </script>
+</head>
+<body>
+    <div>this is a div.</div>
+    <input type="text" value="this is a input." id = 'inp' name = '这是input的属性。' abc = '这是我随意加的属性。'><br>
+   <select name="xiala" id="xl">
+       <option value="zhangsna">张三</option>
+       <option value="lisi" selected>李四</option>
+       <option value="wanger">王二</option>
+   </select>
+   <table border="3">
+       <caption>全选</caption>
+       <tr>
+           <th><input type="checkbox" id = 'ckall'></th>
+           <th>姓名</th>
+        </tr>
+        <tr>
+            <td><input type="checkbox" class="ckall"></td>
+            <td>张三</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" class="ckall"></td>
+            <td>李四</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" class="ckall"></td>
+            <td>王二</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" class="ckall"></td>
+            <td>麻子</td>
+        </tr>
+   </table>
+    <button id="content1">捕获1</button>
+    <button id="content2">捕获2</button>
+    <!-- php输出：die -->
+</body>
+</html>

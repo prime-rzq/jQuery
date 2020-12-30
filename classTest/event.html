@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script src = '../File/jquery-3.5.1.min.js'></script>
+<script>
+    $(() => {
+        $('#but1').dblclick(() => {
+            alert('this is a test button.');
+        });
+        $('#but2').hover(() => {
+            $('#but2').css("background-color","red");
+        },function(){
+            $('#but2').css("background-color",'green');
+        })
+        // $('#but2').mouseenter(() => {
+        //     $('#but2').css("background-color","red");
+        // })
+        // $('#but2').mouseleave(() => {
+        //     $('#but2').css("background-color",'green');
+        // })
+    })
+</script>
+</head>
+<body>
+    <button id = 'but1'>dbclick me have a happy.</button><p></p>
+    <button id = 'but2'>mouseenter me have a happy.</button>
+</body>
+</html>

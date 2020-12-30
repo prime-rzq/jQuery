@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajax</title>
+    <script src="../File/jquery-3.5.1.js"></script>
+    <script>
+        $(() =>{
+            //使用Ajax读取远程数据
+            $.get('http://musicapi.leanapp.cn/personalized?limit=5',
+                function(res){
+                    console.log(res);
+                    for(m of res.result){
+                        $('table').append(`
+                            <tr>
+                                <td>001</td>
+                                <td>永不失联的爱</td>
+                                <td>44444998</td>
+                            </tr>
+                        `);
+                        //     <tr>
+                        //         <td>${m.id}</td>
+                        //         <td>${m.name}</td>
+                        //         <td>${m.playCount}</td>
+                        //     </tr>
+                        // `);
+                    }
+                }
+            )
+        })
+    </script>
+</head>
+<body>
+    <table border="3">
+        <tr>
+            <td>歌曲编号</td>
+            <td>歌曲名称</td>
+            <td>播放量</td>
+        </tr>
+    </table>
+</body>
+</html>

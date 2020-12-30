@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图表插件 echarts</title>
+    <style>
+        #box{
+            border: 3px solid black;
+            width: 500px;
+            height: 300px;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+    </style>
+    <script src="../File/jquery-3.5.1.js"></script>
+    <script src="../File/echarts.min.js"></script>
+    <script>
+        $(() => {
+            // var myEcharts = echarts.init($('#box'));
+            var myEcharts = echarts.init(document.querySelector('#box'));
+
+            var option = {
+                title: {
+                    text: '学生出勤率'
+                },
+                tooltip: {},
+                legend: {
+                    data:['人数']
+                },
+                xAxis: {
+                    data: ["信息系","数艺系","机电系","电子系","汽运系","法学系"]
+                },
+                yAxis: {},
+                series: [{
+                    name: '人数',
+                    // type: 'bar',   //bar:柱状图
+                    // type: 'pie',   //扇形
+                    type: 'line',   //bar:柱状图 line:折线图
+                    data: [523, 145, 236, 310, 210, 120]
+                }]
+            };
+            //把数据填充到图形
+            myEcharts.setOption(option);
+        })
+    </script>
+</head>
+<body>
+    <div id="box">
+
+    </div>
+</body>
+</html>

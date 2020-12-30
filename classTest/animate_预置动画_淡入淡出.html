@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            border: 2px solid purple;
+            height: 300px;
+            width: 500px;
+            background-color: purple;
+        }
+    </style>
+    <script src="../File/jquery-3.5.1.js"></script>
+    <script>
+        $(() => {
+            $('#fOut').click(() => {
+                $('#box').fadeOut(3000);
+            })
+            $('#fIn').click(() => {
+                $('#box').fadeIn();
+            })
+            $('#fTo').click(() => {
+                $('#box').fadeTo('slow',0.15);
+            })
+            $('#fToggle').click(() => {
+                $('#box').fadeToggle();
+            })
+        })
+    </script>
+</head>
+<body>
+    <button id="fOut">淡出</button>
+    <button id="fIn">淡入</button>
+    <button id="fTo">淡入到多少</button>
+    <button id="fToggle">淡入淡出</button>
+    <div id="box">
+
+    </div>
+</body>
+</html>

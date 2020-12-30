@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../File/jquery-3.5.1.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            width: 400px;
+            height: 350px; 
+            background-image: url(../img/4.jpg);
+            overflow: hidden;
+        }
+        #box div{
+            width: 400px;
+            height: 80px;
+            line-height: 80px;
+            text-align: center;
+            background-color: grey;
+            opacity: 0.7;
+            position: relative;
+            top: 350px;  
+        }
+    </style>
+
+    <!-- <script>
+        $(()=>{
+            $('#box').mouseover(function(){
+                $('#box div').show();
+            })
+            $('#box').mouseout(function(){
+                $('#box div').hide ();
+            })
+        })
+    </script> -->
+
+    <script>
+        $(()=>{
+            $('#box').mouseover(function(){
+                $('#box div').css('top','270px')
+            })
+            $('#box').mouseout(function(){
+                $('#box div').css('top','350px')
+            })
+        })
+    </script>
+</head>
+<body>
+    <div id="box"> 
+        <div>
+            <button>设置<tton>
+            <button>查看<tton>
+        </div>
+    </div>
+</body>
+<ml>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            border: 2px solid purple;
+            height: 100px;
+            width: 100px;
+            position: relative;
+            /* transform: rotate3d(); */
+        }
+    </style>
+    <script src="../File/jquery-3.5.1.js"></script>
+    <script>
+        //$(document).ready(function{ })
+        $(() => {
+            $('#butTest').click(() => {
+                $('#box').css('background','green');
+                $('#box').animate({
+                    'left':'+=100px',
+                    'height':'+=10px'
+                    // 'transform':'rotate3d(360deg)'
+                },1000,function(){
+                    alert('over!');
+                })
+                .animate({
+                    'top':'+=50px'
+                },1000)
+                
+            })
+        })
+    </script>
+</head>
+<body>
+    <button id = 'butTest'>测试</button>
+    <div id="box">
+
+    </div>
+</body>
+</html>

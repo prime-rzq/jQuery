@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+    <script src="../File/jquery-3.5.1.js"></script>
+    <style>
+        *{margin: 0;padding: 0;}
+        html,body{height: 100%;}
+        .box{
+            height: 100%;
+            background:mediumturquoise;
+            padding: 70px 0 0 200px;
+            box-sizing: border-box;
+            transition: all .3s;
+        }
+        .top{
+            height: 70px;
+            color: honeydew;
+            position: absolute;
+            top:0;
+            left: 0;    
+            padding-left: 200px;
+            line-height: 70px;
+            transition: all .3s;
+        }
+        .left{
+            width: 240px;
+            color: honeydew;    
+            position: absolute;
+            left: 0;
+            transition: all .3s;
+        }
+        .main{
+            background: white;
+            height: 100%;
+        }
+        ul,li,dl,dd{list-style: none;}
+        dl{
+            display: none   ;
+        }
+        ul>li>{
+            display: block;
+            line-height: 30px;
+            text-indent: 20px;
+        }
+        ul>li>i{
+            margin-left: 10px;
+        }
+        dl dd{
+            padding: 5px 0;
+            text-indent: 40px;
+        }
+
+        .top span{
+            display:block;
+            width: 40px;
+            height: 40px;
+            background: khaki;      
+            }
+        /* 切换为小模块 */
+        .small{
+                padding: 50px 0 0 70px;
+        }
+        .small .left {
+                width: 70px;
+        }
+        .small ul>li>span{
+            display: none;
+        }
+        .small .top{
+            padding-left: 70px;
+        }
+    </style>
+    <script>
+        $(()=>{
+            $("ul>li>span").click(function(){
+                $(this).next().toggle()
+            })
+            //点击收缩左边菜单
+            $("#btnleft").click(function(){
+                $(".box").toggleClass("small")
+            })
+        });
+    </script>
+</head>
+<body>
+    <div class="box">
+        <div class="top">
+            <i class="fa fa-bars" id="btnleft" style="color: white;font-size:30px;"></i>
+            
+        </div>
+        <div class="left">
+            <ul>
+                <li>
+                    <i class="fa fa-user" id="btnleft" style="color: white;font-size:30px;"></i>
+                    <span> 用户管理</span>
+                    <dl>
+                        <dd>新增用户</dd>
+                        <dd>用户列表</dd>
+                        <dd>权限分配</dd>
+                    </dl>
+                </li>
+                <li>
+                    <i class="fa fa-file-text-o" id="btnleft" style="color: white;font-size:30px;"></i>
+                    <span>文章管理</span>
+                    <dl>
+                        <dd>新增文章</dd>
+                        <dd>文章列表</dd>
+                        <dd>归档</dd>
+
+                    </dl>
+                </li>
+                <li>
+                    <i class="	fa fa-area-chart" id="btnleft" style="color: white;font-size:30px;"></i>
+                    <span>轮播图管理</span>
+                    <dl>
+                        <dd>图片上传</dd>
+                        <dd>图片新增</dd>
+                        <dd>图片修改</dd>
+
+                    </dl>
+                </li>
+            </ul>
+        </div>
+        <div class="main">main</div>
+    </div>
+    <script>
+        $(()=>{
+            $("ul>li>span").click(function(){
+                $(this).next().toggle()
+            })
+            //点击收缩左边菜单
+            $("#btnleft").click(function(){
+                $(".box").toggleClass("small")
+            })
+        });
+    </script>
+</body>
+</html>

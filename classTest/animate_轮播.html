@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animate_轮播</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        #box{
+            width: 500px;
+            height: 300px;
+            border: 3px solid skyblue;
+            /* overflow: hidden; */
+
+            /* display: flex; */
+            /* display: inline; */
+            margin: 20px;
+            /* position: relative;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,0%); */
+        }
+        li img{
+            width: 500px;
+            height: 300px;
+            float: left;
+            /* border: 1px solid orangered; */
+        }
+        ul{
+            width: 25000px;
+        }
+        ul li{
+            list-style: none;
+        }
+    </style>
+    <script src="../File/jquery-3.5.1.js"></script>
+    <script>
+        $(() => {
+            $('#start').click(() => {
+                $('#fli').animate({
+                    'left':'+=500px'
+                },1000)
+            })
+        })
+    </script>
+</head>
+<body>
+    <button id = 'start'>START</button>
+    <div id = 'box'>
+        <ul>
+            <li><img src="../img/1.jpg" id="tuPian"></li>
+            <li><img src="../img/2.jpg" id="tuPian"></li>
+            <li><img src="../img/3.jpg" id="tuPian"></li>
+            <li><img src="../img/4.jpg" id="tuPian"></li>
+            <li><img src="../img/5.jpg" id="tuPian"></li>
+        </ul>
+        
+    </div>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>厂字布局</title>
+    <style>
+        #box{
+            position: relative;
+            width: 100%;
+            height:500px;
+        }
+        #left{
+            float: left;
+            width: 20%;
+            height: 100%;
+            background-color: chocolate;
+        }
+        #top{
+            float: left;
+            background-color: rgb(172, 82, 82);
+            width: 80%;
+            height: 10%;
+        }
+        .changLeft{
+            width: 10%;
+        }
+        .changTop{
+            width: 80%;
+        }
+        .hide{
+            height: 90px;
+            width: 100px;
+            background-color: blanchedalmond;
+        }
+    </style>
+    <script src="../File/jquery-3.5.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            // let i = 0;
+            $('#left ul li').click(function(){
+                $('.hide').toggle();
+            })
+            $('#btn').click(function(){
+                $('#left').toggleClass('changLeft');
+            })
+        })
+    </script>
+</head>
+<body>
+    <div id="box">
+        <div id = 'left'>
+            <ul>
+                <li>用户管理
+                    <ul class = 'hide'> 
+                        <li>新增用户</li>
+                        <li>用户管理</li>
+                        <li>重置密码</li>
+                        <li>权限分配</li>
+                    </ul>
+                </li>
+                <li>数据管理
+                    <ul class = 'hide'> 
+                        <li>新增用户</li>
+                        <li>用户管理</li>
+                        <li>重置密码</li>
+                        <li>权限分配</li>
+                    </ul>
+                </li>
+                <li>新闻管理
+                    <ul class = 'hide'> 
+                        <li>新增用户</li>
+                        <li>用户管理</li>
+                        <li>重置密码</li>
+                        <li>权限分配</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div id = 'top'>
+            <button id = 'btn'>收缩</button>
+        </div>
+    </div>
+</body>
+</html>

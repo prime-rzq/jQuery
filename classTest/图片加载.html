@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../File/animate.css">
+    <!-- <style>
+        html,body{
+            margin:0px;
+            padding:0px;
+        }
+        .box{
+            width:1000px;
+            margin:0 auto;
+        }
+        .group{
+            height: 230px;
+            padding: 10px 0px;
+            box-sizing: border-box;     /*使用自己的内边距*/
+            display: flex;              /* 弹性布局  */
+            justify-content: space-between; /* 空间平均分布 */
+        }
+        .group img{
+            height: 100%;
+            width: 23%;
+            border-radius: 10px;    /*圆角边框*/
+        }
+        .ys1{animation-delay: 0.2s;}
+        .ys2{animation-delay: .4s;}
+        .ys3{animation-delay: 0.6s;}
+    </style>
+    <script src="../File/jquery-3.5.1.js"></script>
+    <script>
+        $(() => {
+            //对页面滚动条进行监控
+            let i = 1000;
+            $(document).scroll(() => {
+
+
+                let toTop = $(document).scrollTop();
+                if(toTop >= $(document).height()-$(window).height() ){
+                    // console.log('suc');
+                    //随机选择四张图片追加到页面，步骤如下：
+                    //1.随机排序
+                    $('#pic img').each(() => {
+                        if(parseInt(Math.random() * 2) == 0){
+                            $('#pic img').prependTo($('#pic img').parent() ); //prependTo追加到
+                        }
+                    })
+                    //2.随机取出四个(使用过滤选择器，选择索引小于4    lt小于)
+                    let imgs = $('#pic img:lt(4)').clone();
+                    //3.创建元素组
+                    let div = $('<div class = "group"></div>');
+                    div.append(imgs);
+
+                    $('.box').append(div);
+                }
+            })
+
+        })
+    </script> -->
+    <style>
+        html,body{
+            background-color: slateblue;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        .group{
+            height: 180px;
+            padding: 8px 0;
+            box-sizing: border-box;/*框大小模式设置*/
+            display: flex;/*弹性布局*/
+            justify-content: space-between;/*平均分布*/
+        }
+        .group img {
+            height: 100%;
+            width: 22%;
+            border-radius: 10px;
+        }
+        .box{
+            width: 1000px;
+            margin: 0 auto;
+        }
+
+        .ys1{
+            animation-delay: 0.2s;
+        }
+        .ys2{
+            animation-delay: 0.4s;
+        }
+        .ys3{
+            animation-delay: 0.6s;
+        }
+    </style>
+    <script>
+        $(()=>{
+            //对网页滚动条进行监控
+            let i = 1000;
+
+            $(document).scroll(function(){
+                //随机选择4张图片追加到网页
+                //随机排序
+                $('#pic img').each(function(){
+                    if(parseInt(Math.random()*2)==0){
+                        $(this).prependTo($(this).parent())
+                    }
+                })
+                //取出前四个(使用过滤选择器)
+                let imgs = $('#pic img:lt(4)').clone()
+
+                //创建元素组
+                let div = $('<div> class="group"></div>');
+                div.append(img);
+
+                let toTop = $(document).scrollTop()
+                if(toTop >= $(document).height()-$(window).height()){
+                //console.log('我是有底线的！！！！！！')
+                    $('.box').append(`
+                    <div id="pic">
+                        <img src="../img/1.jpg" class="animated bounceIn ys1">
+                        <img src="../img/2.jpg" class="animated bounceIn ys2">
+                        <img src="../img/3.jpg" class="animated bounceIn ys3">
+                        <img src="../img/4.jpg" class="animated bounceIn ys1">
+                        <img src="../img/5.jpg" class="animated bounceIn ys2">
+                        <img src="../img/6.jpg" class="animated bounceIn ys3">
+                        <img src="../img/7.jpg" class="animated bounceIn ys2">
+                        <img src="../img/8.jpg" class="animated bounceIn ys1">
+                        <img src="../img/9.jpg" class="animated bounceIn">
+                    </div>
+                    `)
+                }  
+            })          
+        })
+    </script>
+</head>
+<body>
+    <div id="pic">
+        <img src="../img/1.jpg" class="animated bounceIn ys1">
+        <img src="../img/2.jpg" class="animated bounceIn ys2">
+        <img src="../img/3.jpg" class="animated bounceIn ys3">
+        <img src="../img/4.jpg" class="animated bounceIn ys1">
+        <img src="../img/5.jpg" class="animated bounceIn ys2">
+        <img src="../img/6.jpg" class="animated bounceIn ys3">
+        <img src="../img/7.jpg" class="animated bounceIn ys2">
+        <img src="../img/8.jpg" class="animated bounceIn ys1">
+        <img src="../img/9.jpg" class="animated bounceIn">
+    </div>
+    <div class = "box">
+        <div class="group">
+            <img src="../img/1.jpg" class="animated bounceIn">
+            <img src="../img/2.jpg" class="animated bounceIn ys1">
+            <img src="../img/3.jpg" class="animated bounceIn ys3">
+            <img src="../img/4.jpg" class="animated bounceIn ys1">
+        </div>
+        <div class="group">
+            <img src="../img/5.jpg" class="animated bounceIn">
+            <img src="../img/6.jpg" class="animated bounceIn">
+            <img src="../img/7.jpg" class="animated bounceIn">
+            <img src="../img/8.jpg" class="animated bounceIn">
+        </div>
+        <div class="group">
+            <img src="../img/9.jpg"  class="animated bounceIn">
+            <img src="../img/10.jpg" class="animated bounceIn">
+            <img src="../img/11.jpg" class="animated bounceIn">
+            <img src="../img/12.jpg" class="animated bounceIn">
+        </div>
+        <div class="group">
+            <img src="../img/13.jpg" class="animated bounceIn">
+            <img src="../img/14.jpg" class="animated bounceIn">
+            <img src="../img/15.jpg" class="animated bounceIn">
+            <img src="../img/16.jpg" class="animated bounceIn">
+        </div>
+    </div>
+</body>
+</html>

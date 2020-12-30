@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kai</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        #box{
+            border: 2px solid rgb(24, 70, 92);
+            width: 500px;
+            height: 300px;
+        }
+        .title{
+            background:rgb(165, 106, 100);
+            height: 40px;
+            list-style: none;
+            display: flex;
+            
+        }
+
+        .title li{
+            width: 100px;
+            line-height:40px ;
+            text-align: center;
+        }
+        .content{
+            height: 260px;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        .list{
+            width: 1500px;
+            height: 260px;
+            display: flex;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .list ul{
+            list-style: none;
+            width: 500px;
+            height: 260px;
+        }
+    </style>
+    <script src="../File/jquery-3.5.1.js"></script>
+    <script>
+        $(()=>{
+            $('.title li').click(function(){
+                //将当前标题背景改为红色
+                // $(this).addClass()
+                $(this).css('background','red');
+                $(this).siblings().css('background','none');
+                
+                //滑动内容框
+                $('.list').animate({
+                    left:(-500*$(this).index())
+                },800)
+            })
+        })
+    </script>
+</head>
+<body>
+    <div id="box">
+        <ul class="title">
+            <li>新闻</li>
+            <li>通告</li>
+            <li>公告</li>
+        </ul>
+        <div id="content"> 
+            <div id="list">
+            <ul >
+                <li>新闻列表1</li>
+                <li>新闻列表1</li>
+                <li>新闻列表1</li>
+            </ul>
+            <ul >
+                <li>通告列表2</li>
+                <li>通告列表2</li>
+                <li>通告列表2</li>
+            </ul>
+            <ul >
+                <li>公告列表3</li>
+                <li>公告列表3</li>
+                <li>公告列表3</li>
+            </ul>
+        </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQ plug-in</title>
+    <style>
+        #box{
+            border: 3px solid black;
+            width: 200px;
+            height: 200px;
+            padding: 10px;
+            box-sizing: border-box;
+            display: flex;
+        }
+    </style>
+    <script src="../File/jquery-3.5.1.js"></script>
+    <script src="../File/jquery-qrcode-0.17.0.min.js"></script>
+    <script>
+        $(() => {
+            $('#box').qrcode({
+                render:'canvas',
+                text:'姓名：阮子亲<br>电话：188 8888 8888<br>',
+                fill:'green',
+                // background:'pink'   //背景颜色
+            });
+        })
+    </script>
+</head>
+<body>
+    二维码<br>
+    <div id="box">
+
+    </div>
+</body>
+</html>

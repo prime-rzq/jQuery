@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            border: 1px solid black;
+            /* height: 200px; */
+        }
+    </style>
+    <script src="../File/jquery-3.5.1.js"></script>
+    <script>
+        $(() => {
+            $('#add').click(function(){
+                $('#addBox:first').append('<p><b>append:追加于当级末尾</b></p>');
+                $('#addBox:first').prepend('<p><b>prepend:追加于当级开头</b></p>');
+                $('#addBox:first').after('<p><b>after:追加于上级后面</b></p>');
+                $('#addBox:first').before('<p><b>before:追加于上级开头</b></p>');
+            })
+            $('#drop').click(function(){
+                $('#dropBox').empty();
+            })
+        })
+    </script>
+</head>
+<body>
+    <button id = 'add' >增元素</button>
+    <button id = 'drop'>减元素</button>
+    <div id = 'addBox'>
+        <span>原有内容。<span>这是原有的子级span</span></span>
+    </div>
+    <br>
+    <div id = 'dropBox'>
+        <span>原有内容。<span>这是原有的子级span</span></span>
+    </div>
+</body>
+</html>

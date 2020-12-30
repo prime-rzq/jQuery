@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../File/jquery-3.5.1.js"></script>
+    <script src="../File/jquery-qrcode-0.17.0.min.js"></script>
+    <script>
+        $(() => {
+            $('#try').qrcode({
+                render:'test',
+                text: 'name：rzq <br> ',
+                fill: 'pink',
+                // background:'green',
+            })
+            $('#try1').qrcode('https://wwww.baidu.com')
+        })
+    </script>
+</head>
+<body>
+    二维码<br>
+    <div id="try"></div>
+    <div id="try1"></div>
+</body>
+</html>

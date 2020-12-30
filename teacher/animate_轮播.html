@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0px;
+            margin:0px;
+        }
+        ul{
+            width: 500px;
+            height: 300px;
+            border: 2px solid rgb(28, 184, 88);
+            display: flex;
+            list-style: none;
+            position: relative;
+            overflow: hidden;
+        }
+        li{
+            position: absolute;
+            left: 500px;
+        }
+        ul li,img{
+            width: 500px;
+            height: 100%;
+            /* border: 1px solid brown; */
+        }
+    </style>
+    <script src="../File/jquery-3.5.1.js"></script>
+    <script>
+        $(() => {
+            let i = 0;
+            let prev = -1;
+            function lunbo(){
+                if(prev != -1){
+                    $('li').eq(prev).animate({
+                        'left':'-500px'
+                    },1000)
+                }
+
+                $('li').eq(i).animate({
+                   'left':'0px' 
+                },1000)
+                .siblings().css('left','500px');
+                
+                prev = i++;
+                if(i > 3) i = 0;
+                setTimeout(lunbo,2000);
+            }
+            $('#start').click(() => {
+                lunbo();
+            })
+        })
+    </script>
+</head>
+<body>
+    <button id = 'start'>开始</button>
+    <ul>
+        <li><img src="../img/1.jpg" id="tuPian"></li>
+        <li><img src="../img/2.jpg" id="tuPian"></li>
+        <li><img src="../img/3.jpg" id="tuPian"></li>
+        <li><img src="../img/4.jpg" id="tuPian"></li>
+    </ul>
+</body>
+</html>

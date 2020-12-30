@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{padding: 0;margin: 0;}
+        .box{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .item{
+            padding: 10px 0 0 10px;
+            /* height: 200px;
+            overflow: hidden; */
+        }
+        .item img{
+            max-height: 200px;
+        }
+        .tooblar{
+            text-align: center;
+            background:rgba(0,0,0,.5);
+            height: 80px;
+            line-height: 80px;
+            position: relative;
+        }
+    </style>
+    <script src="../File/jquery-3.5.1.js"></script>
+    <script>
+        $(() => {
+            $('.item').hover(function(){
+                $(this).find('.toolbar').animate({
+                    'bottom':'80px'
+                })
+            },function(){
+                $(this).find('.toolbar').animate({
+                    'bottom':'0px'
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+    <div class="box">
+        <div class="item">
+            <img src="../img/1.jpg">
+            <div class="toolbar">
+                <span>编辑</span>
+                <span>删除</span>
+            </div>
+        </div>
+        <div class="item">
+            <img src="../img/2.jpg">
+            <div class="toolbar">
+                <span>编辑</span>
+                <span>删除</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

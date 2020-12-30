@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>预置动画</title>
+    <script src="../File/jquery-3.5.1.js"></script>
+    <style>
+        #box{
+            border: 2px solid purple;
+            height: 300px;
+            width: 500px;
+        }
+    </style>
+    <script>
+        $(() => {
+            //隐藏
+            $('#butHide').click(() => {
+                $('#box').hide('slow');
+            })
+
+            //显示
+            // $('#butShow').click(function(){
+            //     $('#box').show(1000);
+            // })
+
+            //鼠标移动显示
+            $('#butShow').mouseover(function(){
+                $('#box').show(1000);
+            })
+
+            $('#butToggle').hover(function(){
+                $('div').toggle(1000);
+            })
+            
+            $('#slidUp').click(() => {
+                $('#box').slideUp();
+            })
+            $('#slidDown').click(() => {
+                $('#box').slideDown();
+            })
+            $('#slidToggle').click(() => {
+                $('#box').slideToggle(3000);
+            })
+        })
+    </script>
+</head>
+<body>
+    <button id = 'butHide'>隐藏</button>
+    <button id="butShow">显示</button>
+    <button id= 'butToggle'>切换显示和隐藏</button>
+    <button id="slidUp">向上滑动</button>
+    <button id="slidDown">向下滑动</button>
+    <button id="slidToggle">双向滑动</button>
+    <div id="box">
+
+    </div>
+</body>
+</html>

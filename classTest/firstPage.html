@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id = 'dd' style = 'border: 1px green solid;'>
+        This is my first page.
+    </div>
+    <button id = 'btn' style = 'border: 1px green solid;'>显示</button>
+</body>
+</html>
+<script>
+    var btn = document.getElementById('btn');
+    var dd = document.getElementById('dd');
+    btn.onclik = function(){
+        dd.style.border = '10px red solid';
+    }
+
+
+    // $('#btn').onclik = function(){
+        
+    // }
+
+</script>
+
+<script src = 'File/jquery-3.5.1.min.js'></script>
